@@ -1,26 +1,87 @@
+:root {
+  --black-color: #000000;
+  --green-color: #00ff00;
+  --red-color: #f40000;
+  --yellow-color: #ffd210;
+  --gray-color: #ESE4D3;
+}
+
+@font-face {
+  font-family: "TheNextFont";
+  src: url(/public/assets/fonts/TheNextFont.ttf);
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "TheNextFont" sans-serif;
+  font-size: 20px;
 }
 
-a {
-  color: inherit;
+.btn-social {
+  color: white;
+  background-color: var(--black-color);
+  border-radius: 25px;
+  border: 1px solid white;
+  margin: 10px;
+  z-index: 2;
+  padding: 5px 15px;
+}
+
+.btn-social:hover {
+  background-color: var(--green-color);
+  color: var(--black-color);
+}
+
+.btn-hover:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition-delay: 0.2s;
+}
+
+.marquee {
+  margin-block: 20px;
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  height: 65px;
+  overflow-x: hidden;
+  font-size: 40px;
+  font-weight: bold;
+  background-color: var(--red-color);
+  color: white;
+  font-family: "TheNextFont";
+}
+
+.marquee-track {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 32s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.text-title {
+  font-size: 50px;
+}
+
+.text-detail {
+  font-size: 32px;
+}
+
+.text-desc {
+  font-size: 22px;
+}
+
+.a-unstyled {
   text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
 }
